@@ -7,13 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import ScheduleIcon from '@material-ui/icons/Schedule'
-import DraftsIcon from '@material-ui/icons/Drafts'
+
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import Tabs from '@material-ui/core/Tabs'
@@ -31,6 +25,7 @@ import Divider from '@material-ui/core/Divider'
 import InputBase from '@material-ui/core/InputBase'
 import { fade } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
+import Menu from '../../components/Menu'
 
 class ProfilePage extends React.Component {
 
@@ -39,29 +34,7 @@ class ProfilePage extends React.Component {
         return (
             <Box flexGrow={1} display="flex" flexDirection="row" className={classes.root}>
                 <Box width={240} minWidth={240}>
-                    <Drawer
-                        classes={{
-                            paper: classes.drawerPaper,
-                            paperAnchorDockedLeft: classes.drawerPaperAnchorDockedLeft,
-                        }}
-                        variant="permanent"
-                        open
-                    >
-                        <List component="nav" aria-label="main mailbox folders">
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <ScheduleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Human Resources" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <DraftsIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Drafts" />
-                            </ListItem>
-                        </List>
-                    </Drawer>
+                    <Menu/>
                 </Box>
                 <Box flexGrow={1} bgcolor="background.default">
 
@@ -150,14 +123,6 @@ class ProfilePage extends React.Component {
 const styles= (theme) => ({
     root: {
 
-    },
-    drawerPaper: {
-        width: 240,
-        backgroundColor: theme.palette.primary.main,
-        borderTopRightRadius: 20,
-    },
-    drawerPaperAnchorDockedLeft: {
-        borderRight: 0
     },
     panelDetails: {
         flexDirection: 'column',
