@@ -29,6 +29,7 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import Menu from '../../components/Menu'
 import Header from '../../components/Header'
 import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions'
+import Panel from '../../components/Panel'
 
 
 class ProfilePage extends React.Component {
@@ -61,34 +62,28 @@ class ProfilePage extends React.Component {
                                     <Tab label="Credentials" />
                                 </Tabs>
 
-                                <ExpansionPanel>
-                                    <ExpansionPanelSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                    >
+                                <Panel
+                                    summary={(
                                         <Typography variant="h5">Summary</Typography>
-                                    </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails className={classes.panelDetails}>
-                                        <Typography className={classes.panelDetailsContent}>
+                                    )}
+                                    details={(
+                                        <Typography>
                                             Adept madical doctor with eight solid years of practice experience. Dedicated to exemplary patient outcomes and following all necessary medical procedures with the use of the latest industry equipment and technology. Willingness to work with all members of the medical team and listen to their suggestions and input to improve results and maximize patient satisfaction.
                                         </Typography>
-                                    </ExpansionPanelDetails>
-                                    <Divider/>
-                                    <ExpansionPanelActions>
-                                        <Button className={classes.textButton} color="primary" size="small">
+                                    )}
+                                    actions={(
+                                        <Button color="primary" size="small">
                                             Edit
                                         </Button>
-                                    </ExpansionPanelActions>
-                                </ExpansionPanel>
+                                    )}
+                                />
 
-                                <ExpansionPanel>
-                                    <ExpansionPanelSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                    >
+                                <Panel
+                                    summary={(
                                         <Typography variant="h5">Contacts</Typography>
-                                    </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails className={classes.panelDetails}>
-                                        <Grid container spacing={3} direction="row"
-                                              alignItems="flex-start" justify="space-between" className={classes.panelDetailsContent}>
+                                    )}
+                                    details={(
+                                        <Grid container spacing={3} direction="row" alignItems="flex-start" justify="space-between">
                                             <Grid item xs={12} sm={12} md={6} lg={4} container>
                                                 <Grid item xs={1} md={2}>
                                                     <DeleteOutlinedIcon color="primary"/>
@@ -127,54 +122,47 @@ class ProfilePage extends React.Component {
                                                 </Grid>
                                             </Grid>
                                         </Grid>
-                                    </ExpansionPanelDetails>
-                                    <Divider/>
-                                    <ExpansionPanelActions>
-                                        <Button className={classes.textButton} color="primary" size="small">
+                                    )}
+                                    actions={(
+                                        <Button color="primary" size="small">
                                             Edit
                                         </Button>
-                                    </ExpansionPanelActions>
-                                </ExpansionPanel>
+                                    )}
+                                />
 
-                                <ExpansionPanel>
-                                    <ExpansionPanelSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                    >
-                                        <Typography variant="h5">Langauges</Typography>
-                                    </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails className={classes.panelDetails}>
-                                        <Box display="flex" justifyContent="flex-start" className={classes.panelDetailsContent}>
+                                <Panel
+                                    summary={(
+                                        <Typography variant="h5">Languages</Typography>
+                                    )}
+                                    details={(
+                                        <Box display="flex" justifyContent="flex-start">
                                             <Chip label="English" className={classes.chip} />
                                             <Chip label="Spanish" className={classes.chip} />
                                         </Box>
-                                    </ExpansionPanelDetails>
-                                    <Divider/>
-                                    <ExpansionPanelActions>
-                                        <Button className={classes.textButton} color="primary" size="small">
+                                    )}
+                                    actions={(
+                                        <Button color="primary" size="small">
                                             Edit
                                         </Button>
-                                    </ExpansionPanelActions>
-                                </ExpansionPanel>
+                                    )}
+                                />
 
-                                <ExpansionPanel>
-                                    <ExpansionPanelSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                    >
+                                <Panel
+                                    summary={(
                                         <Typography variant="h5">System</Typography>
-                                    </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails className={classes.panelDetails}>
-                                        <Box display="flex" justifyContent="flex-start" className={classes.panelDetailsContent}>
+                                    )}
+                                    details={(
+                                        <Box display="flex" justifyContent="flex-start">
                                             <Chip label="Epic" className={classes.chip} />
                                             <Chip label="Devero" className={classes.chip} />
                                         </Box>
-                                    </ExpansionPanelDetails>
-                                    <Divider/>
-                                    <ExpansionPanelActions>
-                                        <Button className={classes.textButton} color="primary" size="small">
+                                    )}
+                                    actions={(
+                                        <Button color="primary" size="small">
                                             Edit
                                         </Button>
-                                    </ExpansionPanelActions>
-                                </ExpansionPanel>
+                                    )}
+                                />
 
                             </Grid>
                         </Grid>
@@ -190,28 +178,12 @@ const styles= (theme) => ({
     root: {
 
     },
-    panelDetails: {
-        flexDirection: 'column',
-        padding: 0,
-    },
-    panelDetailsContent: {
-        paddingLeft: theme.spacing(3),
-        paddingRight: theme.spacing(3),
-        paddingBottom: theme.spacing(3),
-    },
     chip: {
         background: theme.palette.background.default,
         marginRight: theme.spacing(1),
     },
     panelDetailsInputName: {
         color: theme.palette.text.secondary,
-    },
-    panelDetailsActions: {
-
-    },
-
-    textButton: {
-
     },
 
 
