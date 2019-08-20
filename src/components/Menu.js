@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 
 import ScheduleIcon from '@material-ui/icons/Schedule'
 import DraftsIcon from '@material-ui/icons/Drafts'
+import Button from '@material-ui/core/Button'
 
 class Menu extends React.Component {
 
@@ -23,7 +24,7 @@ class Menu extends React.Component {
                 variant="permanent"
                 open
             >
-                <List component="nav" aria-label="main mailbox folders">
+                <List className={classes.list} component="nav" aria-label="main mailbox folders">
                     <ListItem button>
                         <ListItemIcon>
                             <ScheduleIcon />
@@ -37,6 +38,9 @@ class Menu extends React.Component {
                         <ListItemText primary="Drafts" />
                     </ListItem>
                 </List>
+                <Button className={classes.button} variant="contained" color="secondary">
+                    Help
+                </Button>
             </Drawer>
         )
     }
@@ -54,6 +58,14 @@ const styles= (theme) => ({
     },
     drawerPaperAnchorDockedLeft: {
         borderRight: 0
+    },
+    list: {
+        flexGrow: 1,
+    },
+    button: {
+        width: '62%',
+        margin: '0 auto 64px',
+        color: '#fff',
     },
 });
 

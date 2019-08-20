@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase'
 
 import SearchIcon from '@material-ui/icons/Search'
+import Box from '@material-ui/core/Box'
 
 
 
@@ -20,7 +21,8 @@ class Header extends React.Component {
     render() {
         const { classes }= this.props
         return (
-            <AppBar position="static" color="inherit" elevation={0}>
+            <AppBar position="static" color="inherit" elevation={0} className={classes.root}>
+                <Box className={classes.fix}/>
                 <Toolbar>
                     <IconButton
                         color="primary"
@@ -61,7 +63,15 @@ class Header extends React.Component {
 
 const styles= (theme) => ({
     root: {
-
+        position: 'relative',
+    },
+    fix: {
+        position: 'absolute',
+        top: 0,
+        left: -64,
+        width: 64,
+        height: 64,
+        backgroundColor: theme.palette.background.paper,
     },
     search: {
         position: 'relative',
@@ -90,12 +100,12 @@ const styles= (theme) => ({
         color: 'inherit',
     },
     inputInput: {
-                    padding: theme.spacing(1, 1, 1, 7),
-                    transition: theme.transitions.create('width'),
-                    width: '100%',
-                    [theme.breakpoints.up('sm')]: {
-                        width: 120,
-                        '&:focus': {
+        padding: theme.spacing(1, 1, 1, 7),
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            width: 120,
+            '&:focus': {
                 width: 200,
             },
         },

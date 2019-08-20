@@ -32,6 +32,9 @@ import Panel from '../../components/Panel'
 import Avatar from '@material-ui/core/Avatar'
 import PersonIcon from '@material-ui/icons/Person'
 
+import GoogleMapReact from 'google-map-react'
+import CardContent from '@material-ui/core/CardContent'
+
 class ProfilePage extends React.Component {
 
     render() {
@@ -48,16 +51,26 @@ class ProfilePage extends React.Component {
                     <Box p={{ xs:2, sm:3 }}>
                         <Grid container spacing={3}>
                             <Grid item xs={12} sm={12} md={4} lg={4}>
-
                                 <Box mt={9}>
+
                                     <Card className={classes.card}>
                                         <Avatar className={classes.avatar} color="primary">
                                             <PersonIcon fontSize="inherit"/>
                                         </Avatar>
-                                        John Doe
+                                        <CardContent>
+                                            John Doe
+                                        </CardContent>
                                     </Card>
-                                </Box>
 
+                                    <Card className={classes.card}>
+                                        <CardContent>
+                                            <Typography color="textSecondary" gutterBottom>
+                                                Current location
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                </Box>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8} lg={8}>
 
@@ -194,6 +207,7 @@ const styles= (theme) => ({
     },
     card: {
         overflow: 'visible !important',
+        marginBottom: theme.spacing(2),
     },
     avatar: {
         width: 120,
