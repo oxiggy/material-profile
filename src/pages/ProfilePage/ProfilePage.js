@@ -21,16 +21,16 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 
 import ImageIcon from '@material-ui/icons/Image';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 import Menu from '../../components/Menu'
 import Header from '../../components/Header'
-import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions'
 import Panel from '../../components/Panel'
 
+import Avatar from '@material-ui/core/Avatar'
+import PersonIcon from '@material-ui/icons/Person'
 
 class ProfilePage extends React.Component {
 
@@ -48,12 +48,23 @@ class ProfilePage extends React.Component {
                     <Box p={{ xs:2, sm:3 }}>
                         <Grid container spacing={3}>
                             <Grid item xs={12} sm={12} md={4} lg={4}>
-                                <Card>
-                                    John Doe
-                                </Card>
+
+                                <Box mt={9}>
+                                    <Card className={classes.card}>
+                                        <Avatar className={classes.avatar} color="primary">
+                                            <PersonIcon fontSize="inherit"/>
+                                        </Avatar>
+                                        John Doe
+                                    </Card>
+                                </Box>
+
                             </Grid>
                             <Grid item xs={12} sm={12} md={8} lg={8}>
+
                                 <Tabs
+                                    classes={{
+                                        root: classes.tabs,
+                                    }}
                                     value={0}
                                     //onChange={handleChange}
                                     indicatorColor="primary" textColor="primary" centered
@@ -63,6 +74,9 @@ class ProfilePage extends React.Component {
                                 </Tabs>
 
                                 <Panel
+                                    classes={{
+                                        root:classes.panel_first
+                                    }}
                                     summary={(
                                         <Typography variant="h5">Summary</Typography>
                                     )}
@@ -178,9 +192,27 @@ const styles= (theme) => ({
     root: {
 
     },
+    card: {
+        overflow: 'visible !important',
+    },
+    avatar: {
+        width: 120,
+        height: 120,
+        margin: '0 auto',
+        position: 'relative',
+        top: -60,
+        fontSize: '96px',
+        backgroundColor: theme.palette.primary['100'],
+    },
     chip: {
         background: theme.palette.background.default,
         marginRight: theme.spacing(1),
+    },
+    tabs: {
+        marginBottom: theme.spacing(3),
+    },
+    panel_first: {
+        marginTop: '0 !important',
     },
     panelDetailsInputName: {
         color: theme.palette.text.secondary,

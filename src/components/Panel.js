@@ -14,7 +14,7 @@ class Panel extends React.PureComponent {
     render() {
         const { classes, summary, details, actions }= this.props
         return (
-            <ExpansionPanel className={classes.root}>
+            <ExpansionPanel className={classes.root} square={false} defaultExpanded>
 
                 <ExpansionPanelSummary
                     className={classes.summary}
@@ -48,7 +48,11 @@ class Panel extends React.PureComponent {
 
 const styles= (theme) => ({
     root: {
-
+        margin: '16px 0',
+        borderRadius: theme.shape.borderRadius,
+        '&::before': {
+            backgroundColor: 'transparent',
+        }
     },
     summary: {
 
