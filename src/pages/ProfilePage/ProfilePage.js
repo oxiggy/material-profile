@@ -28,6 +28,7 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 import Menu from '../../components/Menu'
 import Header from '../../components/Header'
+import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions'
 
 
 class ProfilePage extends React.Component {
@@ -70,15 +71,14 @@ class ProfilePage extends React.Component {
                                         <Typography className={classes.panelDetailsContent}>
                                             Adept madical doctor with eight solid years of practice experience. Dedicated to exemplary patient outcomes and following all necessary medical procedures with the use of the latest industry equipment and technology. Willingness to work with all members of the medical team and listen to their suggestions and input to improve results and maximize patient satisfaction.
                                         </Typography>
-                                        <Divider/>
-                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
-                                            <Button color="primary" className={classes.textButton}>
-                                                Edit
-                                            </Button>
-                                        </Box>
                                     </ExpansionPanelDetails>
+                                    <Divider/>
+                                    <ExpansionPanelActions>
+                                        <Button className={classes.textButton} color="primary" size="small">
+                                            Edit
+                                        </Button>
+                                    </ExpansionPanelActions>
                                 </ExpansionPanel>
-
 
                                 <ExpansionPanel>
                                     <ExpansionPanelSummary
@@ -126,16 +126,14 @@ class ProfilePage extends React.Component {
                                                     </Box>
                                                 </Grid>
                                             </Grid>
-
                                         </Grid>
-
-                                        <Divider/>
-                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
-                                            <Button color="primary" className={classes.textButton}>
-                                                Edit
-                                            </Button>
-                                        </Box>
                                     </ExpansionPanelDetails>
+                                    <Divider/>
+                                    <ExpansionPanelActions>
+                                        <Button className={classes.textButton} color="primary" size="small">
+                                            Edit
+                                        </Button>
+                                    </ExpansionPanelActions>
                                 </ExpansionPanel>
 
                                 <ExpansionPanel>
@@ -145,18 +143,17 @@ class ProfilePage extends React.Component {
                                         <Typography variant="h5">Langauges</Typography>
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails className={classes.panelDetails}>
-
                                         <Box display="flex" justifyContent="flex-start" className={classes.panelDetailsContent}>
                                             <Chip label="English" className={classes.chip} />
                                             <Chip label="Spanish" className={classes.chip} />
                                         </Box>
-                                        <Divider/>
-                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
-                                            <Button color="primary" className={classes.textButton}>
-                                                Edit
-                                            </Button>
-                                        </Box>
                                     </ExpansionPanelDetails>
+                                    <Divider/>
+                                    <ExpansionPanelActions>
+                                        <Button className={classes.textButton} color="primary" size="small">
+                                            Edit
+                                        </Button>
+                                    </ExpansionPanelActions>
                                 </ExpansionPanel>
 
                                 <ExpansionPanel>
@@ -170,13 +167,13 @@ class ProfilePage extends React.Component {
                                             <Chip label="Epic" className={classes.chip} />
                                             <Chip label="Devero" className={classes.chip} />
                                         </Box>
-                                        <Divider/>
-                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
-                                            <Button color="primary" className={classes.textButton}>
-                                                Edit
-                                            </Button>
-                                        </Box>
                                     </ExpansionPanelDetails>
+                                    <Divider/>
+                                    <ExpansionPanelActions>
+                                        <Button className={classes.textButton} color="primary" size="small">
+                                            Edit
+                                        </Button>
+                                    </ExpansionPanelActions>
                                 </ExpansionPanel>
 
                             </Grid>
