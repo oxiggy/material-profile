@@ -1,19 +1,14 @@
 import React from 'react'
 import { withStyles } from '@material-ui/styles'
 import Box from '@material-ui/core/Box'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
+
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
+
 
 import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import Breadcrumbs from '@material-ui/core/Breadcrumbs'
-import Link from '@material-ui/core/Link'
 import Card from '@material-ui/core/Card'
 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
@@ -21,11 +16,19 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Divider from '@material-ui/core/Divider'
+import Chip from '@material-ui/core/Chip'
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
 
-import InputBase from '@material-ui/core/InputBase'
-import { fade } from '@material-ui/core/styles'
-import SearchIcon from '@material-ui/icons/Search'
+import ImageIcon from '@material-ui/icons/Image';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+
 import Menu from '../../components/Menu'
+import Header from '../../components/Header'
+
 
 class ProfilePage extends React.Component {
 
@@ -38,40 +41,7 @@ class ProfilePage extends React.Component {
                 </Box>
                 <Box flexGrow={1} bgcolor="background.default">
 
-                    <AppBar position="static" color="inherit" elevation={0}>
-                        <Toolbar>
-                            <IconButton
-                                color="primary"
-                                edge="start"
-                                aria-label="menu"
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            <Breadcrumbs aria-label="breadcrumb">
-                                <Link variant="h6" color="inherit" href="/">
-                                    Human Resources
-                                </Link>
-                                <Typography variant="h6" color="textPrimary">John Doe</Typography>
-                            </Breadcrumbs>
-
-                            <div style={{ flexGrow:1 }}/>
-
-                            <div className={classes.search}>
-                                <div className={classes.searchIcon}>
-                                    <SearchIcon />
-                                </div>
-                                <InputBase
-                                    placeholder="Search…"
-                                    classes={{
-                                        root: classes.inputRoot,
-                                        input: classes.inputInput,
-                                    }}
-                                    inputProps={{ 'aria-label': 'search' }}
-                                />
-                            </div>
-
-                        </Toolbar>
-                    </AppBar>
+                    <Header/>
 
                     <Box p={{ xs:2, sm:3 }}>
                         <Grid container spacing={3}>
@@ -97,10 +67,109 @@ class ProfilePage extends React.Component {
                                         <Typography variant="h5">Summary</Typography>
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails className={classes.panelDetails}>
-                                        <Typography className={classes.panelDetailsText}>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                            sit amet blandit leo lobortis eget.
+                                        <Typography className={classes.panelDetailsContent}>
+                                            Adept madical doctor with eight solid years of practice experience. Dedicated to exemplary patient outcomes and following all necessary medical procedures with the use of the latest industry equipment and technology. Willingness to work with all members of the medical team and listen to their suggestions and input to improve results and maximize patient satisfaction.
                                         </Typography>
+                                        <Divider/>
+                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
+                                            <Button color="primary" className={classes.textButton}>
+                                                Edit
+                                            </Button>
+                                        </Box>
+                                    </ExpansionPanelDetails>
+                                </ExpansionPanel>
+
+
+                                <ExpansionPanel>
+                                    <ExpansionPanelSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                    >
+                                        <Typography variant="h5">Contacts</Typography>
+                                    </ExpansionPanelSummary>
+                                    <ExpansionPanelDetails className={classes.panelDetails}>
+                                        <Grid container spacing={3} direction="row"
+                                              alignItems="flex-start" justify="space-between" className={classes.panelDetailsContent}>
+                                            <Grid item xs={12} sm={12} md={6} lg={4} container>
+                                                <Grid item xs={1} md={2}>
+                                                    <DeleteOutlinedIcon color="primary"/>
+                                                </Grid>
+                                                <Grid item xs={11} md={10}>
+                                                    <Box pb={3}>
+                                                        <Typography variant="body1" color="textPrimary">(650) 555-1234</Typography>
+                                                        <Typography variant="body2" className={classes.panelDetailsInputName} >Home Phone</Typography>
+                                                    </Box>
+                                                    <Box>
+                                                        <Typography variant="subtitle2">(323) 555-6789</Typography>
+                                                        <Typography variant="body2" className={classes.panelDetailsInputName}>Business phone</Typography>
+                                                    </Box>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item xs={12} sm={12} md={6} lg={4} container>
+                                                <Grid item xs={1} md={2}>
+                                                    <DeleteOutlinedIcon color="primary"/>
+                                                </Grid>
+                                                <Grid item xs={11} md={10}>
+                                                    <Box>
+                                                        <Typography variant="subtitle2">aliconnors@example.com</Typography>
+                                                        <Typography variant="body2" className={classes.panelDetailsInputName}>E-mail</Typography>
+                                                    </Box>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item xs={12} sm={12} md={6} lg={4} container>
+                                                <Grid item xs={1} md={2}>
+                                                    <DeleteOutlinedIcon color="primary"/>
+                                                </Grid>
+                                                <Grid item xs={11} md={10}>
+                                                    <Box>
+                                                        <Typography variant="subtitle2">200 SW 1st Ave San Francisco, CA 94112</Typography>
+                                                        <Typography variant="body2" className={classes.panelDetailsInputName}>Address</Typography>
+                                                    </Box>
+                                                </Grid>
+                                            </Grid>
+
+                                        </Grid>
+
+                                        <Divider/>
+                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
+                                            <Button color="primary" className={classes.textButton}>
+                                                Edit
+                                            </Button>
+                                        </Box>
+                                    </ExpansionPanelDetails>
+                                </ExpansionPanel>
+
+                                <ExpansionPanel>
+                                    <ExpansionPanelSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                    >
+                                        <Typography variant="h5">Langauges</Typography>
+                                    </ExpansionPanelSummary>
+                                    <ExpansionPanelDetails className={classes.panelDetails}>
+
+                                        <Box display="flex" justifyContent="flex-start" className={classes.panelDetailsContent}>
+                                            <Chip label="English" className={classes.chip} />
+                                            <Chip label="Spanish" className={classes.chip} />
+                                        </Box>
+                                        <Divider/>
+                                        <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
+                                            <Button color="primary" className={classes.textButton}>
+                                                Edit
+                                            </Button>
+                                        </Box>
+                                    </ExpansionPanelDetails>
+                                </ExpansionPanel>
+
+                                <ExpansionPanel>
+                                    <ExpansionPanelSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                    >
+                                        <Typography variant="h5">System</Typography>
+                                    </ExpansionPanelSummary>
+                                    <ExpansionPanelDetails className={classes.panelDetails}>
+                                        <Box display="flex" justifyContent="flex-start" className={classes.panelDetailsContent}>
+                                            <Chip label="Epic" className={classes.chip} />
+                                            <Chip label="Devero" className={classes.chip} />
+                                        </Box>
                                         <Divider/>
                                         <Box display="flex" justifyContent="flex-end" p={3} pt={1} pb={1}>
                                             <Button color="primary" className={classes.textButton}>
@@ -128,55 +197,27 @@ const styles= (theme) => ({
         flexDirection: 'column',
         padding: 0,
     },
-    panelDetailsText: {
+    panelDetailsContent: {
         paddingLeft: theme.spacing(3),
         paddingRight: theme.spacing(3),
         paddingBottom: theme.spacing(3),
     },
+    chip: {
+        background: theme.palette.background.default,
+        marginRight: theme.spacing(1),
+    },
+    panelDetailsInputName: {
+        color: theme.palette.text.secondary,
+    },
     panelDetailsActions: {
 
     },
+
     textButton: {
 
     },
 
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.background.default, 0.75),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.background.default, 1),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(1),
-            width: 'auto',
-        },
-    },
-    searchIcon: {
-        width: theme.spacing(7),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputRoot: {
-        color: 'inherit',
-    },
-    inputInput: {
-        padding: theme.spacing(1, 1, 1, 7),
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 120,
-            '&:focus': {
-                width: 200,
-            },
-        },
-    },
+
 });
 
 export default withStyles(styles)(
