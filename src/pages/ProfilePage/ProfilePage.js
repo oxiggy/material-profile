@@ -5,24 +5,12 @@ import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
-
 import Grid from '@material-ui/core/Grid'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Card from '@material-ui/core/Card'
 
-import ExpansionPanel from '@material-ui/core/ExpansionPanel'
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import Divider from '@material-ui/core/Divider'
 import Chip from '@material-ui/core/Chip'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-
-import ImageIcon from '@material-ui/icons/Image';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 import Menu from '../../components/Menu'
@@ -31,10 +19,10 @@ import Panel from '../../components/Panel'
 
 import Avatar from '@material-ui/core/Avatar'
 import PersonIcon from '@material-ui/icons/Person'
-import FaceIcon from '@material-ui/icons/Face'
 
 import CardContent from '@material-ui/core/CardContent'
-import Fab from '@material-ui/core/Fab'
+
+import postImage from '../../images/post.jpg'
 
 class ProfilePage extends React.Component {
 
@@ -54,25 +42,22 @@ class ProfilePage extends React.Component {
                             <Grid item xs={12} sm={12} md={4} lg={4}>
                                 <Box mt={9}>
 
-                                    <Card className={classes.card}>
+                                    <Card className={classes.bio}>
                                         <Avatar className={classes.bioAvatar} color="primary">
                                             <PersonIcon fontSize="inherit"/>
                                         </Avatar>
                                         <CardContent>
-                                            <Grid container>
-                                                <Grid item xs={12}>James Connors</Grid>
-                                                <Grid item xs={3}>
-                                                    <Avatar className={classes.bioWorkIcon}>
-                                                        <FaceIcon fontSize="inherit"/>
-                                                    </Avatar>
-                                                </Grid>
-                                                <Grid item xs={9} container spacing={1}>
-                                                    <Grid item><Chip label="Registered Nurse"/></Grid>
-                                                    <Grid item><Chip label="Eergency Room Nurse"/></Grid>
-                                                    <Grid item><Chip label="Registered Nurse"/></Grid>
-                                                    <Grid item><Chip label="Eergency Room Nurse"/></Grid>
-                                                </Grid>
-                                            </Grid>
+                                            <Typography className={classes.bioName} variant="h6">James Connors</Typography>
+                                            <Box display="flex" width="62%" margin="24px auto">
+                                                <Box>
+                                                    <img className={classes.bioPost} src={postImage}/>
+                                                </Box>
+                                                <Box flexGrow={1}>
+                                                    <Chip className={classes.bioChip} label="Registered Nurse"/>
+                                                    <Chip className={classes.bioChip} label="Eergency Room Nurse"/>
+                                                </Box>
+                                            </Box>
+                                            <Button variant="contained" color="primary" fullWidth>Message</Button>
                                         </CardContent>
                                     </Card>
 
@@ -237,8 +222,26 @@ const styles= (theme) => ({
         margin: '0 auto',
         position: 'relative',
         top: -60,
+        marginBottom: -60,
         fontSize: '96px',
         backgroundColor: theme.palette.primary['100'],
+    },
+    bio: {
+        overflow: 'visible !important',
+        marginBottom: theme.spacing(2),
+        paddingLeft: theme.spacing(4),
+        paddingRight: theme.spacing(4),
+    },
+    bioName: {
+        textAlign: 'center',
+    },
+    bioPost: {
+        width: 56,
+        marginRight: theme.spacing(1.5),
+    },
+    bioChip: {
+        height: theme.spacing(3),
+        marginBottom: theme.spacing(1),
     },
     bioWorkIcon: {
         width: 120,
