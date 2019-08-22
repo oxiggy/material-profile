@@ -8,7 +8,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
 import ScheduleIcon from '@material-ui/icons/Schedule'
-import DraftsIcon from '@material-ui/icons/Drafts'
+import MoveToInboxIcon from '@material-ui/icons/MoveToInbox'
+import SendIcon from '@material-ui/icons/Send'
+import DeleteIcon from '@material-ui/icons/Delete'
 import Button from '@material-ui/core/Button'
 
 class Menu extends React.Component {
@@ -27,15 +29,27 @@ class Menu extends React.Component {
                 <List className={classes.list} component="nav" aria-label="main mailbox folders">
                     <ListItem button>
                         <ListItemIcon>
-                            <ScheduleIcon />
+                            <ScheduleIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Human Resources" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <DraftsIcon />
+                            <MoveToInboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Drafts" />
+                        <ListItemText primary="Hire Clinicians" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <SendIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Messages" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <DeleteIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Agency Profile" />
                     </ListItem>
                 </List>
                 <Button className={classes.button} variant="contained" color="secondary">

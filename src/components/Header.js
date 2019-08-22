@@ -12,11 +12,16 @@ import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase'
 
 import SearchIcon from '@material-ui/icons/Search'
+import NotificationsIcon from '@material-ui/icons/Notifications'
+
 import Box from '@material-ui/core/Box'
+import Badge from '@material-ui/core/Badge'
 
 
 
 class Header extends React.Component {
+
+
 
     render() {
         const { classes }= this.props
@@ -53,6 +58,11 @@ class Header extends React.Component {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    <Badge className={classes.badgeMargin} badgeContent={10} color="secondary">
+                        <NotificationsIcon />
+                    </Badge>
+
+
 
                 </Toolbar>
             </AppBar>
@@ -110,8 +120,12 @@ const styles= (theme) => ({
             },
         },
     },
+    badgeMargin: {
+        margin: theme.spacing(2),
+    },
 });
 
 export default withStyles(styles)(
     Header
 )
+

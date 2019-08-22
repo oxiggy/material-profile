@@ -31,9 +31,10 @@ import Panel from '../../components/Panel'
 
 import Avatar from '@material-ui/core/Avatar'
 import PersonIcon from '@material-ui/icons/Person'
+import FaceIcon from '@material-ui/icons/Face'
 
-import GoogleMapReact from 'google-map-react'
 import CardContent from '@material-ui/core/CardContent'
+import Fab from '@material-ui/core/Fab'
 
 class ProfilePage extends React.Component {
 
@@ -54,18 +55,39 @@ class ProfilePage extends React.Component {
                                 <Box mt={9}>
 
                                     <Card className={classes.card}>
-                                        <Avatar className={classes.avatar} color="primary">
+                                        <Avatar className={classes.bioAvatar} color="primary">
                                             <PersonIcon fontSize="inherit"/>
                                         </Avatar>
                                         <CardContent>
-                                            John Doe
+                                            <Grid container>
+                                                <Grid item xs={12}>James Connors</Grid>
+                                                <Grid item xs={3}>
+                                                    <Avatar className={classes.bioWorkIcon}>
+                                                        <FaceIcon fontSize="inherit"/>
+                                                    </Avatar>
+                                                </Grid>
+                                                <Grid item xs={9} container spacing={1}>
+                                                    <Grid item><Chip label="Registered Nurse"/></Grid>
+                                                    <Grid item><Chip label="Eergency Room Nurse"/></Grid>
+                                                    <Grid item><Chip label="Registered Nurse"/></Grid>
+                                                    <Grid item><Chip label="Eergency Room Nurse"/></Grid>
+                                                </Grid>
+                                            </Grid>
                                         </CardContent>
                                     </Card>
 
                                     <Card className={classes.card}>
                                         <CardContent>
                                             <Typography color="textSecondary" gutterBottom>
-                                                Current location
+                                                Alerts:
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                    <Card className={classes.card}>
+                                        <CardContent>
+                                            <Typography color="textSecondary" gutterBottom>
+                                                Current location:
                                             </Typography>
                                         </CardContent>
                                     </Card>
@@ -209,7 +231,7 @@ const styles= (theme) => ({
         overflow: 'visible !important',
         marginBottom: theme.spacing(2),
     },
-    avatar: {
+    bioAvatar: {
         width: 120,
         height: 120,
         margin: '0 auto',
@@ -218,6 +240,16 @@ const styles= (theme) => ({
         fontSize: '96px',
         backgroundColor: theme.palette.primary['100'],
     },
+    bioWorkIcon: {
+        width: 120,
+        height: 120,
+        margin: '0 auto',
+        position: 'relative',
+        top: -60,
+        fontSize: '36px',
+        backgroundColor: theme.palette.primary['200'],
+    },
+
     chip: {
         background: theme.palette.background.default,
         marginRight: theme.spacing(1),
