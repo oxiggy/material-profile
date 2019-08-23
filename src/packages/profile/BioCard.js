@@ -24,11 +24,9 @@ class BioCard extends React.PureComponent {
                 content={(
                     <Box className={classes.content}>
                         <Typography className={classes.name} variant="h6">James Connors</Typography>
-                        <Box display="flex" width="62%" margin="24px auto">
-                            <Box>
-                                <img className={classes.profession} src={postImage}/>
-                            </Box>
-                            <Box flexGrow={1}>
+                        <Box className={classes.tagsContainer} display="flex" flexWrap="wrap">
+                            <img className={classes.profession} src={postImage}/>
+                            <Box display="flex" flexDirection="column">
                                 <Chip className={classes.workPosition} label="Registered Nurse"/>
                                 <Chip className={classes.workPosition} label="Eergency Room Nurse"/>
                             </Box>
@@ -56,24 +54,34 @@ const styles= (theme) => ({
         backgroundColor: theme.palette.primary['100'],
     },
     content: {
-        paddingLeft: theme.spacing(4),
-        paddingRight: theme.spacing(4),
+
     },
     name: {
         textAlign: 'center',
     },
+    tagsContainer: {
+        justifyContent: 'center',
+        margin: "24px 0px",
+    },
     profession: {
         width: 56,
+        height: 56,
         marginRight: theme.spacing(1.5),
+        marginBottom: theme.spacing(1.5),
+        borderRadius: theme.shape.borderRadius,
     },
     workPosition: {
         color: 'white',
         backgroundColor: theme.palette.primary.main,
         height: theme.spacing(3),
         marginBottom: theme.spacing(1),
+        marginRight: theme.spacing(1),
     },
     button: {
-        background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+        display: 'flex',
+        width: '80%',
+        margin: '0 auto',
+        background: 'linear-gradient(45deg, #5fb2e3 30%, #14eef9 90%)',
         color: 'white',
     },
 });

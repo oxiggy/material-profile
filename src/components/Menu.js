@@ -14,6 +14,7 @@ import MoveToInboxIcon from '@material-ui/icons/MoveToInbox'
 import SendIcon from '@material-ui/icons/Send'
 import DeleteIcon from '@material-ui/icons/Delete'
 import Button from '@material-ui/core/Button'
+import logoImage from '../images/logo.png'
 
 function Menu(props) {
 
@@ -31,6 +32,7 @@ function Menu(props) {
             open={isDesktop ? true : open}
             onClose={onClose}
         >
+            <img className={classes.logoImage} src={logoImage}/>
             <List className={classes.list} component="nav" aria-label="main menu">
                 <ListItem className={classes.listItem} button>
                     <ListItemIcon className={classes.icon}>
@@ -79,6 +81,12 @@ const styles= (theme) => ({
     },
     paperAnchorDockedLeft: {
         borderRight: 0
+    },
+    logoImage: {
+      width: "80%",
+        marginLeft: theme.spacing(2),
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(3),
     },
     list: {
         flexGrow: 1,

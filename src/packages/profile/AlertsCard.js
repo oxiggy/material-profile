@@ -16,11 +16,11 @@ class AlertsCard extends React.PureComponent {
                             Alerts:
                         </Typography>
                         <ul className={classes.list}>
-                            <Typography variant="body1" variantMapping={{ body1:'li' }}>
-                                <span className={classes.bullet}>●</span> <span className={classes.event}>алерт и</span> <span className={classes.deadline}>дата</span>
+                            <Typography className={classes.listItem} variant="body1" variantMapping={{ body1:'li' }}>
+                                <span className={classes.bullet}>●</span> <span className={classes.event}>CPR License expiration on</span> <strong className={classes.deadline}>07/19/2019</strong>
                             </Typography>
-                            <Typography variant="body1" variantMapping={{ body1:'li' }}>
-                                <span className={classes.bullet}>●</span> <span className={classes.event}>алерт и </span> <span className={classes.deadline}>дата</span>
+                            <Typography className={classes.listItem} variant="body1" variantMapping={{ body1:'li' }}>
+                                <span className={classes.bullet}>●</span> <span className={classes.event}>Car Insurance expiration on </span> <strong className={classes.deadline}>08/25/2019</strong>
                             </Typography>
                         </ul>
                     </Box>
@@ -36,15 +36,24 @@ const styles= (theme) => ({
     },
     list: {
         listStyle: 'none',
+        margin: 0,
+        marginTop: 12,
+        marginBottom: -4,
         padding: 0,
     },
+    listItem: {
+        marginTop: 8,
+        '& + &': {
+            marginTop: 8,
+        }
+    },
     bullet: {
-        color: 'red',
+        color: theme.palette.secondary.A700,
     },
     event: {
     },
     deadline: {
-        color: "red",
+        color: theme.palette.secondary.A700,
     },
 })
 

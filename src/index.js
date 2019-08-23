@@ -19,7 +19,17 @@ const theme= createMuiTheme({
         },
     },
     overrides: {
+        MuiButton: {
+            root: {
+                textTransform: 'none',
+                letterSpacing: '0.5px',
+            },
+        },
         MuiTypography: {
+            h5: {
+                fontSize: '15px',
+                fontWeight: 500,
+            },
             h6: {
                 fontWeight: 400,
             },

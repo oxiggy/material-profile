@@ -67,8 +67,8 @@ function ProfilePage(props) {
                                 //onChange={handleChange}
                                 indicatorColor="primary" textColor="primary" centered
                             >
-                                <Tab label="Profile" />
-                                <Tab label="Credentials" />
+                                <Tab className={classes.tab} label="Profile" />
+                                <Tab  className={classes.tab} label="Credentials" />
                             </Tabs>
                             <SummaryPanel/>
                             <ContactsPanel/>
@@ -98,6 +98,10 @@ const styles= (theme) => ({
     },
     tabs: {
         marginBottom: theme.spacing(3),
+    },
+    tab: {
+        textTransform: 'none',
+        fontSize: 16,
     },
 
 

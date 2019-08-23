@@ -90,7 +90,7 @@ class Header extends React.PureComponent {
                         aria-label="current user"
                         onClick={this.handleOpenUserMenu}
                     >
-                        <Avatar className={classes.userAvatar} alt="Remy Sharp" src={userImage} />
+                        <Avatar className={classes.userAvatar} alt="photo" src={userImage} />
                         Jennifer
                         <ExpandMoreIcon className={classes.userAvatarDropdownIcon}/>
                     </Button>
@@ -98,6 +98,7 @@ class Header extends React.PureComponent {
                         id="simple-menu"
                         anchorEl={this.state.userButtonEl}
                         anchorOrigin={{ vertical:'bottom', horizontal:'left' }}
+
                         keepMounted
                         open={this.state.userMenuOpen}
                         onClose={this.handleCloseUserMenu}
@@ -170,7 +171,6 @@ const styles= (theme) => ({
         padding: 0,
         paddingLeft: theme.spacing(0.5),
         paddingRight: theme.spacing(0.5),
-        textTransform: 'none',
         lineHeight: '1px',
         color: theme.palette.text.secondary,
         borderRadius: 24,
