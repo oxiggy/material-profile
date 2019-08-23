@@ -17,11 +17,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications'
 import Box from '@material-ui/core/Box'
 import Badge from '@material-ui/core/Badge'
 
-
-
-class Header extends React.Component {
-
-
+class Header extends React.PureComponent {
 
     render() {
         const { classes, onOpenMenu }= this.props
@@ -62,8 +58,6 @@ class Header extends React.Component {
                     <Badge className={classes.badgeMargin} badgeContent={10} color="secondary">
                         <NotificationsIcon />
                     </Badge>
-
-
 
                 </Toolbar>
             </AppBar>

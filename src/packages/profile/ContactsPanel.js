@@ -20,6 +20,7 @@ class ContactsPanel extends React.PureComponent {
                 )}
                 details={(
                     <Grid container spacing={3} direction="row" alignItems="flex-start" justify="space-between">
+
                         <Grid item xs={12} sm={12} md={6} lg={4} container>
                             <Grid item xs={1} md={2}>
                                 <PhoneOutlinedIcon color="primary"/>
@@ -27,7 +28,7 @@ class ContactsPanel extends React.PureComponent {
                             <Grid item xs={11} md={10}>
                                 <Box pb={3}>
                                     <Typography variant="body1" color="textPrimary">(650) 555-1234</Typography>
-                                    <Typography variant="body2" className={classes.panelDetailsInputName} >Home Phone</Typography>
+                                    <Typography variant="body2" className={classes.panelDetailsInputName}>Home Phone</Typography>
                                 </Box>
                                 <Box>
                                     <Typography variant="subtitle2">(323) 555-6789</Typography>
@@ -35,6 +36,7 @@ class ContactsPanel extends React.PureComponent {
                                 </Box>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12} sm={12} md={6} lg={4} container>
                             <Grid item xs={1} md={2}>
                                 <EmailOutlinedIcon color="primary"/>
@@ -46,6 +48,7 @@ class ContactsPanel extends React.PureComponent {
                                 </Box>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12} sm={12} md={6} lg={4} container>
                             <Grid item xs={1} md={2}>
                                 <LocationOnOutlinedIcon color="primary"/>
@@ -57,6 +60,7 @@ class ContactsPanel extends React.PureComponent {
                                 </Box>
                             </Grid>
                         </Grid>
+
                     </Grid>
                 )}
                 actions={(
@@ -65,9 +69,7 @@ class ContactsPanel extends React.PureComponent {
                     </Button>
                 )}
             />
-
         )
-
     }
 }
 

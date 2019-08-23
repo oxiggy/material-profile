@@ -1,6 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/styles'
-import StaticPanel from '../../components/StaticPanel'
+import Card from '../../components/Card'
 
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
@@ -15,7 +15,7 @@ class BioCard extends React.PureComponent {
     render () {
         const { classes }= this.props
         return (
-            <StaticPanel
+            <Card
                 logo={(
                     <Avatar className={classes.avatar} color="primary">
                         <PersonIcon fontSize="inherit"/>
@@ -36,11 +36,8 @@ class BioCard extends React.PureComponent {
                         <Button className={classes.button} variant="contained" color="primary" fullWidth>Message</Button>
                     </Box>
                 )}
-
             />
-
         )
-
     }
 }
 

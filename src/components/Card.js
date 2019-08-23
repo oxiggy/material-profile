@@ -1,15 +1,15 @@
 import React from 'react'
 import { withStyles } from '@material-ui/styles'
-import Card from '@material-ui/core/Card'
+import CardBase from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
 
-class Panel extends React.PureComponent {
+class Card extends React.PureComponent {
 
     render() {
         const { classes, logo, content }= this.props
         return (
-            <Card className={classes.root}>
+            <CardBase className={classes.root}>
                 {!!logo && logo}
 
                 <CardContent
@@ -17,9 +17,7 @@ class Panel extends React.PureComponent {
                 >
                     {!!content && content}
                 </CardContent>
-            </Card>
-
-
+            </CardBase>
         )
     }
 
@@ -34,9 +32,8 @@ const styles= (theme) => ({
     content: {
 
     },
-
 });
 
 export default withStyles(styles)(
-    Panel
+    Card
 )

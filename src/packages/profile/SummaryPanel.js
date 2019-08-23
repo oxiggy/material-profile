@@ -27,7 +27,6 @@ class SummaryPanel extends React.PureComponent {
                     </Button>
                 )}
             />
-
         )
     }
 
