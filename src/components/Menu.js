@@ -32,26 +32,26 @@ function Menu(props) {
             onClose={onClose}
         >
             <List className={classes.list} component="nav" aria-label="main menu">
-                <ListItem button>
-                    <ListItemIcon>
+                <ListItem className={classes.listItem} button>
+                    <ListItemIcon className={classes.icon}>
                         <ScheduleIcon/>
                     </ListItemIcon>
                     <ListItemText primary="Human Resources" />
                 </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
+                <ListItem className={classes.listItem} button>
+                    <ListItemIcon className={classes.icon}>
                         <MoveToInboxIcon />
                     </ListItemIcon>
                     <ListItemText primary="Hire Clinicians" />
                 </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
+                <ListItem className={classes.listItem} button>
+                    <ListItemIcon className={classes.icon}>
                         <SendIcon />
                     </ListItemIcon>
                     <ListItemText primary="Messages" />
                 </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
+                <ListItem className={classes.listItem} button>
+                    <ListItemIcon className={classes.icon}>
                         <DeleteIcon />
                     </ListItemIcon>
                     <ListItemText primary="Agency Profile" />
@@ -82,6 +82,12 @@ const styles= (theme) => ({
     },
     list: {
         flexGrow: 1,
+    },
+    listItem: {
+        color: '#fff',
+    },
+    icon: {
+        color: 'inherit',
     },
     button: {
         width: '62%',

@@ -15,9 +15,13 @@ class AlertsCard extends React.PureComponent {
                         <Typography color="textSecondary" gutterBottom>
                             Alerts:
                         </Typography>
-                        <ul className={classes.ul}>
-                            <li className={classes.li}><span className={classes.event}>алерт и</span> <span className={classes.deadline}>дата</span></li>
-                            <li className={classes.li}><span className={classes.event}>алерт и </span> <span className={classes.deadline}>дата</span></li>
+                        <ul className={classes.list}>
+                            <Typography variant="body1" variantMapping={{ body1:'li' }}>
+                                <span className={classes.bullet}>●</span> <span className={classes.event}>алерт и</span> <span className={classes.deadline}>дата</span>
+                            </Typography>
+                            <Typography variant="body1" variantMapping={{ body1:'li' }}>
+                                <span className={classes.bullet}>●</span> <span className={classes.event}>алерт и </span> <span className={classes.deadline}>дата</span>
+                            </Typography>
                         </ul>
                     </Box>
                 )}
@@ -30,24 +34,17 @@ const styles= (theme) => ({
     root: {
 
     },
-    ul: {
-        lineHeight: "1rem",
+    list: {
+        listStyle: 'none',
+        padding: 0,
     },
-    li: {
-        color: "red",
-        fontSize: 28,
-        lineHeight: "inherit",
+    bullet: {
+        color: 'red',
     },
     event: {
-        fontSize: "1rem",
-        color: "blue",
-        lineHeight: "inherit",
-
     },
     deadline: {
-        fontSize: "1rem",
-        color: "yellow",
-        lineHeight: "inherit",
+        color: "red",
     },
 })
 

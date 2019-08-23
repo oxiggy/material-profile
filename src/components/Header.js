@@ -16,8 +16,27 @@ import NotificationsIcon from '@material-ui/icons/Notifications'
 
 import Box from '@material-ui/core/Box'
 import Badge from '@material-ui/core/Badge'
+import Avatar from '@material-ui/core/Avatar'
+
+import userImage from '../images/user.png'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import Button from '@material-ui/core/Button'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 class Header extends React.PureComponent {
+
+    state= {
+        userAnchorEl: null,
+    }
+
+    handleOpenUserMenu= ({ target:userAnchorEl }) => {
+        this.setState({ userAnchorEl })
+    }
+
+    handleCloseUserMenu= () => {
+        this.setState({ userAnchorEl:null })
+    }
 
     render() {
         const { classes, onOpenMenu }= this.props
@@ -55,10 +74,36 @@ class Header extends React.PureComponent {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <Badge className={classes.badgeMargin} badgeContent={10} color="secondary">
-                        <NotificationsIcon />
-                    </Badge>
-
+                    <IconButton
+                        className={classes.notifButton}
+                        aria-label="notifications"
+                        onClick={() => {}}
+                    >
+                        <Badge badgeContent={10} color="secondary">
+                            <NotificationsIcon />
+                        </Badge>
+                    </IconButton>
+                    <Button
+                        className={classes.userButton}
+                        edge="end"
+                        aria-label="current user"
+                        onClick={this.handleOpenUserMenu}
+                    >
+                        <Avatar className={classes.userAvatar} alt="Remy Sharp" src={userImage} />
+                        Jennifer
+                        <ExpandMoreIcon className={classes.userAvatarDropdownIcon}/>
+                    </Button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={this.state.userAnchorEl}
+                        keepMounted
+                        open={Boolean(this.state.userAnchorEl)}
+                        onClose={this.handleCloseUserMenu}
+                    >
+                        <MenuItem onClick={this.handleCloseUserMenu}>Profile</MenuItem>
+                        <MenuItem onClick={this.handleCloseUserMenu}>My account</MenuItem>
+                        <MenuItem onClick={this.handleCloseUserMenu}>Logout</MenuItem>
+                    </Menu>
                 </Toolbar>
             </AppBar>
         )
@@ -115,8 +160,25 @@ const styles= (theme) => ({
             },
         },
     },
-    badgeMargin: {
-        margin: theme.spacing(2),
+    notifButton: {
+        margin: theme.spacing(0, 2),
+    },
+    userButton: {
+        height: 48,
+        padding: 0,
+        paddingLeft: theme.spacing(0.5),
+        paddingRight: theme.spacing(0.5),
+        textTransform: 'none',
+        lineHeight: '1px',
+        color: theme.palette.text.secondary,
+        borderRadius: 24,
+    },
+    userAvatar: {
+        marginRight: theme.spacing(1),
+    },
+    userAvatarDropdownIcon: {
+        width: 20,
+        height: 20,
     },
 });
 
