@@ -24,7 +24,7 @@ class Header extends React.Component {
 
 
     render() {
-        const { classes }= this.props
+        const { classes, onOpenMenu }= this.props
         return (
             <AppBar position="static" color="inherit" elevation={0} className={classes.root}>
                 <Box className={classes.fix}/>
@@ -33,6 +33,7 @@ class Header extends React.Component {
                         color="primary"
                         edge="start"
                         aria-label="menu"
+                        onClick={onOpenMenu}
                     >
                         <MenuIcon />
                     </IconButton>

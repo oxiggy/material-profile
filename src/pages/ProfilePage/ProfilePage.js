@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withStyles } from '@material-ui/styles'
 import Box from '@material-ui/core/Box'
 
@@ -31,58 +31,55 @@ import BioCard from '../../packages/profile/BioCard'
 import AlertsCard from '../../packages/profile/AlertsCard'
 import LocationCard from '../../packages/profile/LocationCard'
 
+function ProfilePage(props) {
+    const { classes }= props
+    const [ open, setOpen ]= useState(false)
 
+    return (
+        <Box flexGrow={1} display="flex" flexDirection="row" className={classes.root}>
+            <Menu
+                open={open}
+                onClose={() => setOpen(false)}
+            />
+            <Box flexGrow={1} bgcolor="background.default">
 
-class ProfilePage extends React.Component {
+                <Header onOpenMenu={() => setOpen(true)}/>
 
-    render() {
-        const { classes }= this.props
-        return (
-            <Box flexGrow={1} display="flex" flexDirection="row" className={classes.root}>
-                <Box width={240} minWidth={240}>
-                    <Menu/>
-                </Box>
-                <Box flexGrow={1} bgcolor="background.default">
+                <Box p={{ xs:2, sm:3 }}>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Box mt={9}>
 
-                    <Header/>
+                                <BioCard/>
+                                <AlertsCard/>
+                                <LocationCard/>
 
-                    <Box p={{ xs:2, sm:3 }}>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12} sm={12} md={4} lg={4}>
-                                <Box mt={9}>
-
-                                    <BioCard/>
-                                    <AlertsCard/>
-                                    <LocationCard/>
-
-                                </Box>
-                            </Grid>
-
-
-                            <Grid item xs={12} sm={12} md={8} lg={8}>
-                                <Tabs
-                                    classes={{
-                                        root: classes.tabs,
-                                    }}
-                                    value={0}
-                                    //onChange={handleChange}
-                                    indicatorColor="primary" textColor="primary" centered
-                                >
-                                    <Tab label="Profile" />
-                                    <Tab label="Credentials" />
-                                </Tabs>
-                                <SummaryPanel/>
-                                <ContactsPanel/>
-                                <LanguagesPanel/>
-                                <SystemPanel/>
-                            </Grid>
+                            </Box>
                         </Grid>
-                    </Box>
+
+
+                        <Grid item xs={12} sm={12} md={8} lg={8}>
+                            <Tabs
+                                classes={{
+                                    root: classes.tabs,
+                                }}
+                                value={0}
+                                //onChange={handleChange}
+                                indicatorColor="primary" textColor="primary" centered
+                            >
+                                <Tab label="Profile" />
+                                <Tab label="Credentials" />
+                            </Tabs>
+                            <SummaryPanel/>
+                            <ContactsPanel/>
+                            <LanguagesPanel/>
+                            <SystemPanel/>
+                        </Grid>
+                    </Grid>
                 </Box>
             </Box>
-        )
-    }
-
+        </Box>
+    )
 }
 
 const styles= (theme) => ({

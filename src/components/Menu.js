@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withStyles } from '@material-ui/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+
 import Drawer from '@material-ui/core/Drawer'
 
 import List from '@material-ui/core/List'
@@ -13,51 +15,53 @@ import SendIcon from '@material-ui/icons/Send'
 import DeleteIcon from '@material-ui/icons/Delete'
 import Button from '@material-ui/core/Button'
 
-class Menu extends React.Component {
+function Menu(props) {
 
-    render() {
-        const { classes }= this.props
-        return (
-            <Drawer
-                classes={{
-                    paper: classes.drawerPaper,
-                    paperAnchorDockedLeft: classes.drawerPaperAnchorDockedLeft,
-                }}
-                variant="permanent"
-                open
-            >
-                <List className={classes.list} component="nav" aria-label="main mailbox folders">
-                    <ListItem button>
-                        <ListItemIcon>
-                            <ScheduleIcon/>
-                        </ListItemIcon>
-                        <ListItemText primary="Human Resources" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <MoveToInboxIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Hire Clinicians" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <SendIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Messages" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <DeleteIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Agency Profile" />
-                    </ListItem>
-                </List>
-                <Button className={classes.button} variant="contained" color="secondary">
-                    Help
-                </Button>
-            </Drawer>
-        )
-    }
+    const { classes, open, onClose }= props
+    const isDesktop= useMediaQuery(theme => theme.breakpoints.up('md'))
+
+    return (
+        <Drawer
+            classes={{
+                docked: classes.docked,
+                paper: classes.paper,
+                paperAnchorDockedLeft: classes.paperAnchorDockedLeft,
+            }}
+            variant={isDesktop ? 'permanent' : 'temporary'}
+            open={isDesktop ? true : open}
+            onClose={onClose}
+        >
+            <List className={classes.list} component="nav" aria-label="main menu">
+                <ListItem button>
+                    <ListItemIcon>
+                        <ScheduleIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="Human Resources" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <MoveToInboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Hire Clinicians" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <SendIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Messages" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DeleteIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Agency Profile" />
+                </ListItem>
+            </List>
+            <Button className={classes.button} variant="contained" color="secondary">
+                Help
+            </Button>
+        </Drawer>
+    )
 
 }
 
@@ -65,12 +69,15 @@ const styles= (theme) => ({
     root: {
 
     },
-    drawerPaper: {
+    docked: {
+        width: 240,
+    },
+    paper: {
         width: 240,
         backgroundColor: theme.palette.primary.main,
         borderTopRightRadius: 20,
     },
-    drawerPaperAnchorDockedLeft: {
+    paperAnchorDockedLeft: {
         borderRight: 0
     },
     list: {
