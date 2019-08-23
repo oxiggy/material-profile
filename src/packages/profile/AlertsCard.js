@@ -16,10 +16,10 @@ class AlertsCard extends React.PureComponent {
                             Alerts:
                         </Typography>
                         <ul className={classes.list}>
-                            <Typography className={classes.listItem} variant="body1" variantMapping={{ body1:'li' }}>
+                            <Typography className={classes.listItem} variant="body2" variantMapping={{ body2:'li' }}>
                                 <span className={classes.bullet}>●</span> <span className={classes.event}>CPR License expiration on</span> <strong className={classes.deadline}>07/19/2019</strong>
                             </Typography>
-                            <Typography className={classes.listItem} variant="body1" variantMapping={{ body1:'li' }}>
+                            <Typography className={classes.listItem} variant="body2" variantMapping={{ body2:'li' }}>
                                 <span className={classes.bullet}>●</span> <span className={classes.event}>Car Insurance expiration on </span> <strong className={classes.deadline}>08/25/2019</strong>
                             </Typography>
                         </ul>

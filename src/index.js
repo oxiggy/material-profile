@@ -19,6 +19,12 @@ const theme= createMuiTheme({
         },
     },
     overrides: {
+        MuiBadge: {
+            colorSecondary: {
+                letterSpacing: -0.5,
+                color: '#fff',
+            },
+        },
         MuiButton: {
             root: {
                 textTransform: 'none',
