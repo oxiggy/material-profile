@@ -6,14 +6,11 @@ import Button from '@material-ui/core/Button'
 import Panel from '../../components/Panel'
 import Grid from '@material-ui/core/Grid'
 
-
 import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 
-
-
-class ContactsPanel extends React.Component{
+class ContactsPanel extends React.PureComponent {
     render () {
         const { classes }= this.props
         return (
@@ -74,16 +71,14 @@ class ContactsPanel extends React.Component{
     }
 }
 
-
 const styles= (theme) => ({
     root: {
 
     },
-
     panelDetailsInputName: {
         color: theme.palette.text.secondary,
     },
-});
+})
 
 export default withStyles(styles)(
     ContactsPanel

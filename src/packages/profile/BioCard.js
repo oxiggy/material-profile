@@ -11,11 +11,7 @@ import Avatar from '@material-ui/core/Avatar'
 import PersonIcon from '@material-ui/icons/Person'
 import postImage from '../../images/post.jpg'
 
-
-
-
-
-class BioCard extends React.Component{
+class BioCard extends React.PureComponent {
     render () {
         const { classes }= this.props
         return (
@@ -47,7 +43,6 @@ class BioCard extends React.Component{
 
     }
 }
-
 
 const styles= (theme) => ({
     root: {
@@ -84,7 +79,6 @@ const styles= (theme) => ({
         background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
         color: 'white',
     },
-
 });
 
 export default withStyles(styles)(

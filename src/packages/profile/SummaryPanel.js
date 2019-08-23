@@ -1,15 +1,11 @@
 import React from 'react'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
-import Box from '@material-ui/core/Box'
-import Chip from '@material-ui/core/Chip'
 import Button from '@material-ui/core/Button'
 import Panel from '../../components/Panel'
 
+class SummaryPanel extends React.PureComponent {
 
-
-
-class SummaryPanel extends React.Component{
     render () {
         const { classes }= this.props
         return (
@@ -33,20 +29,18 @@ class SummaryPanel extends React.Component{
             />
 
         )
-
     }
-}
 
+}
 
 const styles= (theme) => ({
     root: {
 
     },
-
     panel_first: {
         marginTop: '0 !important',
     },
-});
+})
 
 export default withStyles(styles)(
     SummaryPanel

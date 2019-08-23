@@ -6,13 +6,8 @@ import Typography from '@material-ui/core/Typography'
 import mapImage from '../../images/map.jpg'
 import Box from '@material-ui/core/Box'
 
+class LocationCard extends React.PureComponent {
 
-
-
-
-
-
-class LocationCard extends React.Component{
     render () {
         const { classes }= this.props
         return (
@@ -26,15 +21,12 @@ class LocationCard extends React.Component{
                             <img className={classes.mapImage} src={mapImage}/>
                         </Box>
                     </Box>
-
                 )}
             />
-
         )
-
     }
-}
 
+}
 
 const styles= (theme) => ({
     root: {
@@ -44,10 +36,10 @@ const styles= (theme) => ({
 
     },
     mapImage: {
-    width: '100%',
-    borderRadius: theme.shape.borderRadius,
+        width: '100%',
+        borderRadius: theme.shape.borderRadius,
     },
-});
+})
 
 export default withStyles(styles)(
     LocationCard

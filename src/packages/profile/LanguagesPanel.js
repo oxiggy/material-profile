@@ -6,10 +6,8 @@ import Chip from '@material-ui/core/Chip'
 import Button from '@material-ui/core/Button'
 import Panel from '../../components/Panel'
 
+class LanguagesPanel extends React.PureComponent {
 
-
-
-class LanguagesPanel extends React.Component{
     render () {
         const { classes }= this.props
         return (
@@ -29,23 +27,20 @@ class LanguagesPanel extends React.Component{
                     </Button>
                 )}
             />
-
         )
-
     }
-}
 
+}
 
 const styles= (theme) => ({
     root: {
 
     },
-
     chip: {
         background: theme.palette.background.default,
         marginRight: theme.spacing(1),
     },
-});
+})
 
 export default withStyles(styles)(
     LanguagesPanel

@@ -5,9 +5,7 @@ import StaticPanel from '../../components/StaticPanel'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
-
-
-class AlertsCard extends React.Component{
+class AlertsCard extends React.PureComponent {
     render () {
         const { classes }= this.props
         return (
@@ -28,7 +26,6 @@ class AlertsCard extends React.Component{
     }
 }
 
-
 const styles= (theme) => ({
     root: {
 
@@ -36,7 +33,6 @@ const styles= (theme) => ({
     ul: {
         lineHeight: "1rem",
     },
-
     li: {
         color: "red",
         fontSize: 28,
@@ -53,8 +49,7 @@ const styles= (theme) => ({
         color: "yellow",
         lineHeight: "inherit",
     },
-
-});
+})
 
 export default withStyles(styles)(
     AlertsCard
