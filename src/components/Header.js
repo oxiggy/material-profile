@@ -27,15 +27,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 class Header extends React.PureComponent {
 
     state= {
-        userAnchorEl: null,
+        userMenuOpen: false,
     }
 
-    handleOpenUserMenu= ({ target:userAnchorEl }) => {
-        this.setState({ userAnchorEl })
+    handleOpenUserMenu= () => {
+        this.setState({ userMenuOpen:true })
     }
 
     handleCloseUserMenu= () => {
-        this.setState({ userAnchorEl:null })
+        this.setState({ userMenuOpen:false })
     }
 
     render() {
@@ -84,6 +84,7 @@ class Header extends React.PureComponent {
                         </Badge>
                     </IconButton>
                     <Button
+                        ref={(userButtonEl) => this.setState({ userButtonEl })}
                         className={classes.userButton}
                         edge="end"
                         aria-label="current user"
@@ -95,9 +96,10 @@ class Header extends React.PureComponent {
                     </Button>
                     <Menu
                         id="simple-menu"
-                        anchorEl={this.state.userAnchorEl}
+                        anchorEl={this.state.userButtonEl}
+                        anchorOrigin={{ vertical:'bottom', horizontal:'left' }}
                         keepMounted
-                        open={Boolean(this.state.userAnchorEl)}
+                        open={this.state.userMenuOpen}
                         onClose={this.handleCloseUserMenu}
                     >
                         <MenuItem onClick={this.handleCloseUserMenu}>Profile</MenuItem>
